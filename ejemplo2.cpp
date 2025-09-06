@@ -14,8 +14,9 @@ int main() {
     int a = 89;
     float b = 3.14;
     cout<<"char + int:" <<character + a << endl;
-    cout<<"float + int:" <<b + a << endl;
+    cout<<"float + int:" <<(float) (b +a)<< endl;
     cout<<"char + float:" <<character + b << endl;
+    cout<<"2 char + float:" <<(int)(character) + b << endl;
     p2.x++;
     a =p2.y++;
     int c=++a;
