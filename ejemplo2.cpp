@@ -31,6 +31,5 @@ int main() {
     cout<<"c:" <<c << endl;
     c *= 3;
     cout<<"c:" <<c << endl;
-
     return 0;
 }
