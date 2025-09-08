@@ -58,5 +58,12 @@ int main() {
             cout<<"El numero es cero"<<endl;
         }
     }
+
+    int* intpointer=&arr[0];
+    for(int i=0;i<5;i++){
+        *intpointer=arr[i];
+        intpointer++;
+        cout<<"El valor en la posicion "<<i<<" es: "<<*(intpointer+i)<<endl;
+    }
     return 0;
 }
