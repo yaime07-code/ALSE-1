@@ -48,6 +48,15 @@ int main() {
         else{
             cout<<"El numero es impar"<<endl;
         }
+        if(arr[i]>0){
+            cout<<"El numero es positivo"<<endl;
+        }
+        else if(arr[i]<0){
+            cout<<"El numero es negativo"<<endl;
+        }
+        else{
+            cout<<"El numero es cero"<<endl;
+        }
     }
     return 0;
 }
