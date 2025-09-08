@@ -62,7 +62,7 @@ int main() {
     int* intpointer=&arr[0];
     for(int i=0;i<5;i++){
         *intpointer=arr[i];
-        intpointer++;
+        *intpointer++;
         cout<<"El valor en la posicion "<<i<<" es: "<<*(intpointer+i)<<endl;
     }
     return 0;
