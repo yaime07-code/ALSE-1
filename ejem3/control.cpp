@@ -42,6 +42,12 @@ int main() {
     for(int i=0;i<5;i++){
         cout<<"Ingrese un numero para la posicion "<<i<<endl;
         cin>>arr[i];
+        if(arr[i]%2==0){
+            cout<<"El numero es par"<<endl;
+        }
+        else{
+            cout<<"El numero es impar"<<endl;
+        }
     }
     return 0;
 }
