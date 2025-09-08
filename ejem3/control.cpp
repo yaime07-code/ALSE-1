@@ -18,7 +18,7 @@ int main() {
     cout<<"Ingrese dos numeros:"<<endl;
     
     cin>>num1;
-    if(num%2==0){
+        if(num1%2==0){
         cout<<"El numero es par"<<endl;
     }
     else{
@@ -26,6 +26,7 @@ int main() {
     }
 
     cout<<"Ingrese otro numero:"<<endl;
+    
     cin>>num2;
     if(num2%2==0 && num1%2==0){
         cout<<"Ambos numeros son pares"<<endl;
@@ -35,6 +36,12 @@ int main() {
     }
     else{
         cout<<"Ambos numeros son impares"<<endl;
+    }
+
+    int arr[5];
+    for(int i=0;i<5;i++){
+        cout<<"Ingrese un numero para la posicion "<<i<<endl;
+        cin>>arr[i];
     }
     return 0;
 }
