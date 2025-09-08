@@ -38,6 +38,16 @@ int main() {
         cout<<"Ambos numeros son impares"<<endl;
     }
 
+    while (x>0)
+    {
+        cout<<"x vale: "<<x<<endl;
+        x--;
+        if (x==5){
+            cout<<"x vale 5, saliendo del ciclo"<<endl;
+            break;
+        }
+    }
+    
     int arr[5];
     for(int i=0;i<5;i++){
         cout<<"Ingrese un numero para la posicion "<<i<<endl;
@@ -59,11 +69,14 @@ int main() {
         }
     }
 
+
+
     int* intpointer=&arr[0];
+    
     for(int i=0;i<5;i++){
         *intpointer=arr[i];
-        *intpointer++;
-        cout<<"El valor en la posicion "<<i<<" es: "<<*(intpointer+i)<<endl;
+        intpointer++;
+        cout<<"El valor en la posicion "<<i<<" es: "<<*(intpointer-1)<<endl;
     }
     return 0;
 }
