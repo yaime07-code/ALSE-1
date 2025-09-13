@@ -31,6 +31,8 @@ int main() {
     cout << "\nSWITCH CON CODIGOS HTTP" << endl;
 
     short httpResponseCode = 200;
+    cout << "ingrese UN CODE HTTP: ";
+    cin >> httpResponseCode;
     switch (httpResponseCode) {
         case 200:
             cout << "OK" << endl;
