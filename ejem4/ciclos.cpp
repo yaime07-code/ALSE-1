@@ -48,5 +48,22 @@ int main() {
             break;
     }
 
+    char matrix[3][3] = {
+        {'a', 'b', 'c'},
+        {'d', 'e', 'f'},
+        {'g', 'h', 'i'}
+    };
+    bool found = false;
+    for (int i = 0; i < 3; i++) {
+        cout << "Matrix " << i << "]["<< j << "]: ";
+        for (int j = 0; j < 3; j++) {
+            cout << "Matrix [" << i << "][" << j << "]: " << matrix[i][j] << endl;
+            if (matrix[i][j] == 'e') {
+                found = true;
+                break; // sale del ciclo interno
+            }
+        }
+    }
+
     return 0;
 }
