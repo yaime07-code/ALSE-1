@@ -31,7 +31,7 @@ int main() {
     cout << "\nSWITCH CON CODIGOS HTTP" << endl;
 
     short httpResponseCode = 200;
-    cout << "ingrese UN CODE HTTP: ";
+    cout << "Ingrese un CODE HTTP: ";
     cin >> httpResponseCode;
     switch (httpResponseCode) {
         case 200:
@@ -48,14 +48,18 @@ int main() {
             break;
     }
 
+    cout << "\nMATRIZ 3x3" << endl;
+
     char matrix[3][3] = {
         {'a', 'b', 'c'},
         {'d', 'e', 'f'},
         {'g', 'h', 'i'}
     };
+
     bool found = false;
+
+
     for (int i = 0; i < 3; i++) {
-        cout << "Matrix " << i << "]["<< j << "]: ";
         for (int j = 0; j < 3; j++) {
             cout << "Matrix [" << i << "][" << j << "]: " << matrix[i][j] << endl;
             if (matrix[i][j] == 'e') {
@@ -63,7 +67,14 @@ int main() {
                 break; // sale del ciclo interno
             }
         }
+
+        if (found) break; // rompe también el ciclo externo
     }
+
+    if (found)
+        cout << "Se encontró la letra 'e' en la matriz." << endl;
+    else
+        cout << "No se encontró la letra 'e' en la matriz." << endl;
 
     return 0;
 }
