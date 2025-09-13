@@ -21,6 +21,16 @@ int main() {
         count++;
     } while (userInput=='q' || userInput=='Q');
 
+    short httpResponseCode=200;
+    switch (httpResponseCode)
+    {
+    case 200:
+        cout<<"OK"<<endl;
+        break;
+    case 404:
+        cout<<"Not Found"<<endl;
+        break;
+    case 500:                       
     return 0;
 }   
     
