@@ -79,4 +79,6 @@ int main() {
         cout<<"El valor en la posicion "<<i<<" es: "<<*(intpointer-1)<<endl;
     }
     return 0;
+
+    
 }
