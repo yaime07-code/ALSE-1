@@ -8,8 +8,9 @@ using namespace std;
 class Buscaminas {
 private:
     int filas, columnas, minas;
-    vector<vector<int>> tablero;   // -1 = mina, otro = número de minas alrededor
-    vector<vector<bool>> visible;  // casillas reveladas
+    vector<vector<int>> tablero;      // -1 = mina, otro = número de minas alrededor
+    vector<vector<bool>> visible;     // casillas reveladas
+    vector<vector<bool>> banderas;    // casillas marcadas con bandera
     bool juegoTerminado;
 
 public:
@@ -21,6 +22,7 @@ public:
 
         tablero.assign(filas, vector<int>(columnas, 0));
         visible.assign(filas, vector<bool>(columnas, false));
+        banderas.assign(filas, vector<bool>(columnas, false));
 
         generarMinas();
         contarMinas();
@@ -65,10 +67,12 @@ public:
         for (int i = 0; i < filas; i++) {
             cout << i << " |";
             for (int j = 0; j < columnas; j++) {
-                if (visible[i][j] || revelarTodo) {
+                if (revelarTodo || visible[i][j]) {
                     if (tablero[i][j] == -1) cout << "💣";
                     else if (tablero[i][j] == 0) cout << " ";
                     else cout << tablero[i][j];
+                } else if (banderas[i][j]) {
+                    cout << "🚩";
                 } else {
                     cout << "#";
                 }
@@ -79,7 +83,7 @@ public:
     }
 
     void revelar(int i, int j) {
-        if (i < 0 || i >= filas || j < 0 || j >= columnas || visible[i][j]) return;
+        if (i < 0 || i >= filas || j < 0 || j >= columnas || visible[i][j] || banderas[i][j]) return;
 
         visible[i][j] = true;
 
@@ -100,6 +104,11 @@ public:
         }
     }
 
+    void alternarBandera(int i, int j) {
+        if (i < 0 || i >= filas || j < 0 || j >= columnas || visible[i][j]) return;
+        banderas[i][j] = !banderas[i][j];
+    }
+
     bool terminado() { return juegoTerminado; }
 };
 
@@ -108,14 +117,22 @@ int main() {
     Buscaminas juego(filas, columnas, minas);
 
     cout << "==== JUEGO DEL BUSCAMINAS ====\n";
-    cout << "Selecciona coordenadas (fila columna) para revelar.\n";
+    cout << "Comandos:\n";
+    cout << "  R fila col   -> Revelar casilla\n";
+    cout << "  F fila col   -> Colocar/Quitar bandera 🚩\n";
 
     while (!juego.terminado()) {
         juego.mostrarTablero();
+        char accion;
         int x, y;
-        cout << "\nIngresa fila y columna: ";
-        cin >> x >> y;
-        juego.revelar(x, y);
+        cout << "\nIngresa comando (R/F) y coordenadas: ";
+        cin >> accion >> x >> y;
+
+        if (accion == 'R' || accion == 'r') {
+            juego.revelar(x, y);
+        } else if (accion == 'F' || accion == 'f') {
+            juego.alternarBandera(x, y);
+        }
     }
 
     cout << "\nFin del juego.\n";
