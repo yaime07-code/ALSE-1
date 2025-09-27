@@ -83,6 +83,6 @@ cout << "Producto: " << magnitud(producto) << " ∠ " << angulo(producto) << "°
 cout << "Paralelo: " << magnitud(z_paralelo) << " ∠ " << angulo(z_paralelo) << "°" << endl;
 
 return 0;
-```
+
 
 }
