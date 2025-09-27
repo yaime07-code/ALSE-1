@@ -46,7 +46,7 @@ return division(multiplicacion(z1, z2), sumaC(z1, z2));
 int main() {
 Complejo num1, num2, suma, resta, producto, z_paralelo;
 
-```
+
 cout << "Ingrese la parte real del primer numero complejo: ";
 cin >> num1.real;
 cout << "Ingrese la parte imaginaria del primer numero complejo: ";
