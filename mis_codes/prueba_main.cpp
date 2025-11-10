@@ -20,14 +20,14 @@ public:
     string getTitulo() {
         return titulo;
     }
-    string getAutor() {
+    string getAutor()  {
         return autor;
     }
-    int getIsbn() {
+    int getIsbn() const {
         return ISBN;
     }
 
-    void mostrarInfo() {
+    void mostrarInfo() const {
         cout << "Título: " << titulo 
              << ", Autor: " << autor 
              << ", ISBN: " << ISBN << endl;
